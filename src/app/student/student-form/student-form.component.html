@@ -1,0 +1,51 @@
+<div class="container p-3 ml-5 mr-5">
+  <form [formGroup]="addStudentForm" (ngSubmit)="onSubmit()">
+    <!-- 2 column grid layout with text inputs for the first and last names -->
+    <div class="row mb-4">
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="form3Example1">Nom</label>
+          <input type="text" formControlName="nom" id="form3Example1" class="form-control" />
+          <div class="label_field" *ngIf="isValidInput('nom')">
+            <label class="text-danger">Le nom de la classe est composé de deux caracteres au minimum</label>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="form-outline">
+          <label class="form-label" for="form3Example2">Prénom</label>
+          <input type="text" formControlName="prenom" id="form3Example2" class="form-control" />
+          <div class="label_field" *ngIf="isValidInput('prenom')">
+            <label class="text-danger">La classe... 3 caracteres au minimum</label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="className">Classe</label>
+      <input type="text" formControlName="idClassroom" id="className" class="form-control"/>
+      <div class="label_field" *ngIf="isValidInput('idClassroom')">
+        <label class="text-danger">Selectionner la classe</label>
+      </div>
+    </div>
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form4Example3">Adresse</label>
+      <textarea formControlName="adresse" class="form-control" id="form4Example3" rows="4">
+      </textarea>
+      <div class="label_field" *ngIf="isValidInput('adresse')">
+        <label class="text-danger">L'adresse ... 10 caracteres minimum</label>
+      </div>
+    </div>
+    <!-- Submit button -->
+    <div class="row">
+      <div class="col-6 d-flex flex-row">
+        <button routerLink="/admin/list-student/{{studentToEdit.idClassroom}}" class="btn-inv btn-block mb-4">Retour à liste des Etudiants</button>
+      </div>
+      <div class=" col-6 d-flex flex-row-reverse">
+        <button class="btn btn-primary btn-block mb-4">Modifier données etudiant</button>
+      </div>
+    </div>
+  </form>
+</div>

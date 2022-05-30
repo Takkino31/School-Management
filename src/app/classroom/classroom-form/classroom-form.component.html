@@ -1,0 +1,30 @@
+<div class="container p-3 ml-5 mr-5">
+  <form [formGroup]="addClassroomForm" (ngSubmit)="onSubmit()">
+    <!-- Email input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="className">Classe</label>
+      <input type="text" formControlName="className" id="className" class="form-control"/>
+      <div class="label_field" *ngIf="isValidInput('className')">
+        <label class="text-danger">Le nom de la classe est composé de deux caracteres au minimum</label>
+      </div>
+    </div>
+    <!-- Message input -->
+    <div class="form-outline mb-4">
+      <label class="form-label" for="form4Example3">Description classe</label>
+      <textarea formControlName="desc" class="form-control" id="form4Example3" rows="4">
+      </textarea>
+      <div class="label_field" *ngIf="isValidInput('desc')">
+        <label class="text-danger">La description ... 10 caracteres minimum</label>
+      </div>
+    </div>
+    <!-- Submit button -->
+    <div class="row">
+      <div class="col-6 d-flex flex-row">
+        <button routerLink="/admin/list-classroom" class="btn-inv btn-block mb-4">Retour à liste des classes</button>
+      </div>
+      <div class=" col-6 d-flex flex-row-reverse">
+        <button class="btn btn-primary btn-block mb-4">Ajouter une nouvelle classe</button>
+      </div>
+    </div>
+  </form>
+</div>

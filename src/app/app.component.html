@@ -1,0 +1,20 @@
+<div class="container mt-5 mb-5">
+  <div class="row">
+    <div class="col-6">
+      <div class="d-flex flex-row align-items-center">
+        <img src="https://i.imgur.com/0OJxfof.png" width=30 height=30>
+        <Span class="integration ms-1 fs-5">Edacy High School</Span>
+      </div>
+      <span class="improve d-block ms-1">Improve your skills</span>
+    </div>
+
+    <div class="col-6 d-flex flex-row-reverse  m-auto">
+      <button routerLink="/admin/add-classroom" class="btn btn-sm m-2">Nouvelle Classe</button>
+      <button routerLink="/admin/add-student" class="btn btn-sm m-2">Nouvel Eleve</button>
+    </div>
+  </div>
+
+  <div class="row m-2 g-2">
+    <router-outlet></router-outlet>
+  </div>
+</div>
